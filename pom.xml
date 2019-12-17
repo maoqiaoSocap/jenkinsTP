@@ -3,7 +3,7 @@
 	<groupId>fr.orsys.samples</groupId>
 	<artifactId>SampleProject</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>Maven Quick Start Archetype</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
@@ -36,6 +36,6 @@
   		<connection>scm:git:https://github.com/maoqiaoSocap/jenkinsTP.git</connection>
   		<url>https:github.com/maoqiaoSocap/jenkinsTP</url>
   		<developerConnection>scm:git:https://github.com/maoqiaoSocap/jenkinsTP.git</developerConnection>
-  	  <tag>HEAD</tag>
+  	  <tag>SampleProject-0.0.2</tag>
   </scm>
 </project>
