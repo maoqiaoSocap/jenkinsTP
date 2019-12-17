@@ -17,5 +17,14 @@ node () {
 			} 
  		} 
 	}
-}
+	stage ('tp_test - Quality Analysis') {
+	withMaven(maven: 'maven') { 
+ 			if(isUnix()) {
+ 				sh "mvn sonar:sonar" 
+			} else { 
+ 				bat "mvn sonar:sonar" 
+			} 
+ 		} 
+	}
+	}
 }
