@@ -29,9 +29,9 @@ node () {
 	stage ('APP-IC - Deploy') {
 	withMaven(maven: 'maven') { 
  			if(isUnix()) {
- 				sh "mvn deploy" 
+ 				sh "mvn clean deploy" 
 			} else { 
- 				bat "mvn deploy" 
+ 				bat "mvn clean deploy" 
 			} 
  		} 
 	}
