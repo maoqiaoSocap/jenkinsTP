@@ -4,10 +4,10 @@ timestamps {
 
 node () {
 
-	stage ('tp_test - Checkout') {
+	stage ('APP-IC - Checkout') {
  	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-login', url: 'https://github.com/maoqiaoSocap/jenkinsTP.git']]]) 
 	}
-	stage ('tp_test - Build') {
+	stage ('APP-IC - Build') {
  			// Maven build step
 	withMaven(maven: 'maven') { 
  			if(isUnix()) {
@@ -17,12 +17,21 @@ node () {
 			} 
  		} 
 	}
-	stage ('tp_test - Quality Analysis') {
+	stage ('APP-IC - Quality Analysis') {
 	withMaven(maven: 'maven') { 
  			if(isUnix()) {
  				sh "mvn sonar:sonar" 
 			} else { 
  				bat "mvn sonar:sonar" 
+			} 
+ 		} 
+	}
+	stage ('APP-IC - Deploy') {
+	withMaven(maven: 'maven') { 
+ 			if(isUnix()) {
+ 				sh "mvn deploy" 
+			} else { 
+ 				bat "mvn deploy" 
 			} 
  		} 
 	}
