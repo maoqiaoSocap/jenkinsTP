@@ -34,4 +34,9 @@
 		</repository>
 	</distributionManagement>
 
+	<scm>
+  		<connection>scm:git:https://github.com/maoqiaoSocap/jenkinsTP.git</connection>
+  		<url>https:github.com/maoqiaoSocap/jenkinsTP</url>
+  		<developerConnection>scm:git:https://github.com/maoqiaoSocap/jenkinsTP.git</developerConnection>
+  	</scm>
 </project>
